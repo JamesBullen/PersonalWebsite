@@ -115,12 +115,12 @@ nav {
             color: var(--background2);
         }
     }
-    & .home1 {
-        padding-top: 20vh;
-    }
     & .home2 {
         padding-top: 5vh;
     }
+}
+.home1 {
+    padding-top: 20vh;
 }
 
 /* Skills Section */
