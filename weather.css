@@ -1,0 +1,116 @@
+/* Globals */
+* {
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+/* Background */
+body {
+    background-image: url('https://ncas.ac.uk/app/uploads/2020/05/Climate-Weather-Blue-Clouds-1280px.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Search Bar */
+#search {padding: 5vh;}
+.search {
+    background: transparent;
+    background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    margin-inline: auto;
+    display: flex;
+    border: 0px solid black;
+    border-radius: 100vh;
+    width: min(800px, 90%);
+    box-shadow:  20px 20px 60px rgba(0, 0, 0, 0.7), -20px -20px 60px rgba(255, 255, 255, 0.3);
+
+    & .input {
+        flex-grow: 1;
+        font-size: 1.5rem;
+        padding: 0.3rem 1.2rem;
+        border: none;
+        background: none;
+    
+        &:focus {
+            border: 0;
+            outline: 0;
+            background: transparent;
+        }
+        &:is(:-webkit-autofill, :autofill) {
+            background: transparent;
+            background-color: transparent;
+        }
+    }
+    & .submits {
+        font-size: 2rem;
+        padding: 0.3rem 0.8rem;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+
+        & i {
+            vertical-align: bottom;
+        }
+    }
+}
+.input:-webkit-autofill {transition: background-color 5000s ease-in-out 0s;}
+
+/* Weather Display */
+#report {padding: 10vh;}
+.report {
+    text-align: center;
+    background: transparent;
+    background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.2));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow:  20px 20px 60px rgba(0, 0, 0, 0.5), -20px -20px 60px rgba(255, 255, 255, 0.3);
+
+    width: min(600px, 90%);
+    margin-inline: auto;
+    border-radius: 20px;
+    border: 0px solid black;
+    font-size: 1.2rem;
+    max-height: 250px;
+
+    display: grid;
+    justify-content: space-between;
+    vertical-align: text-bottom;
+    grid-template-areas:
+        'address address address'
+        'weather temperature other';
+    
+    & .weather-wrapper {
+        margin: 10px 50px;
+        padding: 0;
+
+        & p {
+            margin: 5px;
+        }
+    }
+    & img {
+        max-width: 100px;
+    }
+    & .temperature {
+        padding-left: 50px;
+        font-size: 5rem;
+    }
+    & :is(.wind,.humidity) {
+        background: none;
+        border: 3px solid black;
+        border-radius: 50vh;
+        padding: 5px 2rem;
+        margin: 10px 50px;
+        width: 70px;
+
+        & p {
+            margin: 5px;
+        }
+    }
+}
+.address {grid-area: address;}
+.weather {grid-area: weather;}
+.temperature {grid-area: temperature;}
+.other {grid-area: other;}

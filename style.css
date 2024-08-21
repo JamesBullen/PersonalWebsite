@@ -1,0 +1,285 @@
+/* Gobals */
+:root {
+    --background: #508C9B;
+    --background2: #134B70;
+    --text: #EEEEEE;
+    --text2: #201E43;
+}
+* {
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: medium;
+}
+html {
+    scroll-behavior: smooth;
+    background: var(--background2);
+    background-color: #508C9B;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(90,960,472)'%3E%3Cstop offset='0' stop-color='%23508C9B'/%3E%3Cstop offset='1' stop-color='%23296689'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='400' height='333.3' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.02'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* Background for Website */
+main section {
+    margin: 100px auto;
+}
+.row {
+    margin-bottom: auto;
+}
+.btn {
+    border: 3px solid var(--text);
+    border-radius: 100vh;
+    background-color: transparent;
+    transition: border .2s ease-out;
+    transition: color .2s ease-out;
+    box-shadow: none;
+    line-height: 1.9;
+    font-weight: 600;
+    font-size: large;
+
+    &:hover {
+        border: 3px solid var(--background2);
+        background-color: transparent;
+        color: var(--background2);
+        box-shadow: none;
+    }
+    &:focus {
+        background-color: transparent;
+    }
+}
+i {
+    vertical-align: middle;
+}
+/* Based off how Bootstrap does it */
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+
+    & li {
+        padding: 0;
+    }
+    & > li {
+        display: inline-block;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+/* Nav Bar Section */
+.navbar-fixed {
+    height: 48px;
+}
+nav {
+    background: var(--background2);
+
+    & .nav-center ul li {
+        display: inline;
+        float: none;
+    
+        & a {
+            display: inline-block;
+        }
+    }
+}
+.tabs .tab {
+    & a {
+        font-size: inherit;
+
+        &:is(a:focus, a:focus.active) {
+            background-color: rgba(0,0,0,0);
+        }
+    }
+}
+
+/* Introduction Section */
+#home {
+    height: 100vh;
+
+    & h1 {
+        font-weight: 600;
+        margin-top: 0;
+    }
+    & img {
+        max-width: 400px;
+    }
+    & i {
+        font-size: 2.8rem;
+        transition: color .2s ease-out;
+
+        &:hover {
+            color: var(--background2);
+        }
+    }
+    & .home1 {
+        padding-top: 20vh;
+    }
+    & .home2 {
+        padding-top: 5vh;
+    }
+}
+
+/* Skills Section */
+@keyframes slide {
+    from {transform: translateX(0);} to {transform: translateX(-100%);}
+}
+.slidewrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, black 10% 90%, transparent);
+}
+.slide {
+    display: inline-block;
+    font-size: 7rem;
+    user-select: none;
+    animation: 20s slide infinite linear;
+
+    & img {
+        max-height: max(5vw, 80px);
+        margin-inline: 1vw;
+    }
+    & i {
+        font-size: 2rem;
+    }
+}
+.collapsible {
+    border: 0;
+    box-shadow: none;
+
+    & .collapsible-header{
+        background: var(--background2);
+    }
+}
+.header-first {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+li:not(.active) .header-last {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.collapsible-header i {
+    font-size: 2rem;
+    line-height: 2;
+    color: var(--background);
+}
+.collapsible-body {
+    background: var(--text);
+}
+.body-last {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: color .2s ease-out;
+}
+#skills {
+    margin-top: 0;
+
+    & :is(h5, i) {
+        color: var(--text);
+    }
+    & p {
+        color: var(--text2);
+        font-size: large;
+    }
+}
+
+/* Projects Section */
+#projects {
+    & img {
+        border-radius: 10px;
+    }
+    & p {
+        position: relative;
+        bottom: 45px;
+        left: 10px;
+        font-size: 1.2rem;
+        user-select: none;
+        color: var(--text);
+    }
+    & i {
+        font-size: 1.5rem;
+        color: var(--text);
+    }
+    & div {
+        transition: all .15s ease-in;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all .15s ease-in;
+        }
+    }
+}
+/* Modals for Projects Section */
+.modal {
+    border-radius: 10px;
+
+    & .modal-footer {
+        text-align: center;
+    }
+    & .modal-content p {
+        color: var(--text2);
+        font-size: large;
+    }
+    & :is(.modal-footer a, h3) {
+        color: var(--background2);
+    }
+}
+
+/* Contact Me Section */
+#contact {
+    margin-top: 100px;
+    padding-bottom: 50px;
+
+    & h2 {
+        margin-bottom: 0;
+    }
+}
+.input-field {
+    & label {
+        color: var(--text);
+        max-width: 50vw;
+    }
+    & .btn {
+        line-height: normal;
+    }
+    & .prefix.active {
+        color: var(--background2)
+    }
+}
+input[type=email]:not(.browser-default) {
+    border-bottom: 1px solid var(--text);
+
+    &:focus:not([readonly]) {
+        border-bottom: 1px solid var(--background2);
+        box-shadow: 0 1px 0 0 var(--background2);
+
+        & +label {
+            color: var(--background2)
+        }
+    }
+}
+textarea.materialize-textarea {
+    border-bottom: 1px solid var(--text);
+
+    &:focus:not([readonly]) {
+        border-bottom: 1px solid var(--background2);
+        box-shadow: 0 1px 0 0 var(--background2);
+
+        & +label {
+            color: var(--background2)
+        }
+    }
+}
+
+/* Website Footer Section */
+.page-footer {
+    display: flex;
+    justify-content: space-evenly;
+    background: var(--background2);
+
+}
