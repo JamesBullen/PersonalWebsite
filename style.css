@@ -100,6 +100,9 @@ background-size: cover;
 }
 
 /* Introduction Section */
+@keyframes colour {
+    from {content: url(assets/bootdev.png)} to {content: url(assets/bootdevHover.png);}
+}
 #home {
     height: 100vh;
 
@@ -121,11 +124,10 @@ background-size: cover;
     & .bxl-bootdev {
         content: url(assets/bootdev.png);
         height: 2.8rem;
-        transition: all .2s ease-out;
 
         &:hover {
-            mask-image: var(--background2);
-            transition: all .2s ease-out;
+            animation: 0.2s colour ease-out forwards;
+            -webkit-animation: 0.2s colour ease-out forwards;;           
         }
     }
     & .home1 {
