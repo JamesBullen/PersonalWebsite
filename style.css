@@ -124,7 +124,8 @@ background-size: cover;
         transition: all .2s ease-out;
 
         &:hover {
-            content: url(assets/bootdevHover.png);
+            mask-image: var(--background2);
+            transition: all .2s ease-out;
         }
     }
     & .home1 {
