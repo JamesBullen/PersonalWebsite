@@ -14,28 +14,72 @@
 </head>
 <body>
     <section id="search">
-        <div class="search">
+        <div class="search glass-background">
             <input type="text" id="input" class="input" placeholder="Enter a location..." aria-label="search">
             <button type="button" onclick="displayWeather();" class="submits"><i class='bx bx-search-alt' aria-label="submits"></i></button>
         </div>
     </section>
+
     <section id="report">
-        <div class="report">
-            <h2 id="address" class="address">Address</h2>
+        <div class="report glass-background">
+            <h2 id="address" class="address addressField">Address</h2>
             <div class="weather-wrapper">
-                <img id="weatherImg" src="https://cdn-icons-png.flaticon.com/512/1163/1163739.png" alt="">
-                <p id="weather">Unknown</p>
+                <img class="weatherImgField" src="https://cdn-icons-png.flaticon.com/512/1163/1163739.png" alt="">
+                <p class="weatherField">Unknown</p>
             </div>
-            <h1 class="temperature"><span id="temperature">0</span>°c</h1>
+            <h1 class="temperature"><span class="temperatureField">0</span>°c</h1>
             <div class="other">
                 <div class="wind">
                     <p>Wind</p>
-                    <p><span id="wind">0</span> mph</p>
+                    <p><span class="windField">0</span> mph</p>
                 </div>
                 <div class="humidity">
                     <p>Humidity</p>
-                    <p><span id="humidity">0</span>%</p>
+                    <p><span class="humidityField">0</span>%</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nearby" >
+        <div class="glass-background">
+            <h3 class="addressField">Address</h3>
+            <div>
+                <img class="weatherImgField" src="https://cdn-icons-png.flaticon.com/512/1163/1163739.png" alt="">
+                <p class="weatherField">Unknown</p>
+                <p><span class="temperatureField">0</span>°c</p>
+                <p>Wind: <span class="windField">0</span>mph</p>
+                <p>Humidity: <span class="humidityField">0</span>%</p>
+            </div>
+        </div>
+        <div class="glass-background">
+            <h3 class="addressField">Address</h3>
+            <div>
+                <img class="weatherImgField" src="https://cdn-icons-png.flaticon.com/512/1163/1163739.png" alt="">
+                <p class="weatherField">Unknown</p>
+                <p><span class="temperatureField">0</span>°c</p>
+                <p>Wind: <span class="windField">0</span>mph</p>
+                <p>Humidity: <span class="humidityField">0</span>%</p>
+            </div>
+        </div>
+        <div class="glass-background">
+            <h3 class="addressField">Address</h3>
+            <div>
+                <img class="weatherImgField" src="https://cdn-icons-png.flaticon.com/512/1163/1163739.png" alt="">
+                <p class="weatherField">Unknown</p>
+                <p><span class="temperatureField">0</span>°c</p>
+                <p>Wind: <span class="windField">0</span>mph</p>
+                <p>Humidity: <span class="humidityField">0</span>%</p>
+            </div>
+        </div>
+        <div class="glass-background">
+            <h3 class="addressField">Address</h3>
+            <div>
+                <img class="weatherImgField" src="https://cdn-icons-png.flaticon.com/512/1163/1163739.png" alt="">
+                <p class="weatherField">Unknown</p>
+                <p><span class="temperatureField">0</span>°c</p>
+                <p>Wind: <span class="windField">0</span>mph</p>
+                <p>Humidity: <span class="humidityField">0</span>%</p>
             </div>
         </div>
     </section>

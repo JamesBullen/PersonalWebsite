@@ -19,7 +19,9 @@ function displayWeather() {
 
 async function fetchWeather() {
     const location = document.getElementById('input').value;
-    const url = `http://192.168.1.165:5000/${location}`;
+    //const distance = document.getElementById('distance').value;
+    // const url = `http://192.168.1.165:5000/${location}/${distance}`;
+    const url = `http://172.17.123.169:5000/${location}/20`;
 
     response = await fetch(url);
 
@@ -27,10 +29,19 @@ async function fetchWeather() {
 };
 
 function setWeather(weather) {
-    document.getElementById('temperature').innerText = weather[0][0];
-    document.getElementById('weather').innerText = weatherCode[weather[0][1]];
-    document.getElementById('weatherImg').src = weatherImg[weather[0][1]];
-    document.getElementById('wind').innerText = weather[0][2];
-    document.getElementById('humidity').innerText = weather[0][3];
-    document.getElementById('address').innerText = weather[1];
+    const addressList = document.getElementsByClassName('addressField');
+    const weatherList = document.getElementsByClassName('weatherField');
+    const weatherImgList = document.getElementsByClassName('weatherImgField');
+    const temperatureList = document.getElementsByClassName('temperatureField');
+    const windList = document.getElementsByClassName('windField');
+    const humidityList = document.getElementsByClassName('humidityField');
+
+    for (let i = 0; i < weather[1][0].length; i++) {
+        addressList[i].innerText = weather[0][i];
+        weatherList[i].innerText = weatherCode[weather[1][0][i]];
+        weatherImgList[i].src = weatherImg[weather[1][0][i]];
+        temperatureList[i].innerText = weather[1][1][i];
+        windList[i].innerText = weather[1][2][i];
+        humidityList[i].innerText = weather[1][3][i];
+    };
 };
