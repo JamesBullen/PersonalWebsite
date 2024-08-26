@@ -12,6 +12,16 @@ const weatherImg = {0:'https://cdn-icons-png.flaticon.com/512/1163/1163764.png',
         81:'https://cdn-icons-png.flaticon.com/512/1163/1163728.png', 82:'https://cdn-icons-png.flaticon.com/512/1163/1163728.png', 85:'https://cdn-icons-png.flaticon.com/512/1163/1163731.png',
         86:'https://cdn-icons-png.flaticon.com/512/1163/1163731.png', 95:'https://cdn-icons-png.flaticon.com/512/1163/1163738.png', 96:'https://cdn-icons-png.flaticon.com/512/1163/1163733.png',
         99:'https://cdn-icons-png.flaticon.com/512/1163/1163733.png'};
+const weatherSection =
+        `<h3 class="addressField">Address</h3>
+        <div>
+            <img class="weatherImgField" src="https://cdn-icons-png.flaticon.com/512/1163/1163739.png" alt="">
+            <p class="weatherField">Unknown</p>
+            <p><span class="temperatureField">0</span>°c</p>
+            <p>Wind: <span class="windField">0</span>mph</p>
+            <p>Humidity: <span class="humidityField">0</span>%</p>
+        </div>`
+
 
 function displayWeather() {
     const weather = fetchWeather().then(setWeather);
@@ -37,6 +47,13 @@ function setWeather(weather) {
     const humidityList = document.getElementsByClassName('humidityField');
 
     for (let i = 0; i < weather[1][0].length; i++) {
+        if (i !== 0) {
+            const node = document.createElement('div');
+            node.classList.add(`glass-background`);
+            node.innerHTML = weatherSection;
+            document.getElementById('nearby').appendChild(node)
+        }
+
         addressList[i].innerText = weather[0][i];
         weatherList[i].innerText = weatherCode[weather[1][0][i]];
         weatherImgList[i].src = weatherImg[weather[1][0][i]];
