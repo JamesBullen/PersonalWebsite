@@ -30,7 +30,7 @@ async function fetchWeather() {
     const location = document.getElementById('input').value;
     const distance = document.getElementById('distance').value;
     const url = `http://192.168.1.165:5000/${location}/${distance}`;
-    // const url = `http://172.17.123.169:5000/${location}/20`;
+    // const url = `http://172.17.123.169:5000/${location}/${distance}`;
 
     response = await fetch(url);
 
@@ -45,12 +45,14 @@ function setWeather(weather) {
     const windList = document.getElementsByClassName('windField');
     const humidityList = document.getElementsByClassName('humidityField');
 
+    const nearby = document.getElementById('nearby')
+    nearby.innerHTML = ''
     for (let i = 0; i < weather[1][0].length; i++) {
         if (i !== 0) {
             const node = document.createElement('div');
             node.classList.add(`glass-background`);
             node.innerHTML = weatherSection;
-            document.getElementById('nearby').appendChild(node)
+            nearby.appendChild(node)
         }
 
         addressList[i].innerText = weather[0][i];

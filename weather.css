@@ -95,7 +95,7 @@ body {
         max-width: 100px;
     }
     & .temperature {
-        padding-left: 40px;
+        padding-left: 0px;
         font-size: 5rem;
     }
     & :is(.wind,.humidity) {
@@ -127,7 +127,7 @@ body {
         margin: 0;
     }
     & div {
-        padding: 20px 50px;
+        padding: 10px 50px;
 
         & div {
         display: flex;
