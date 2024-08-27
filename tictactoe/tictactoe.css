@@ -80,7 +80,7 @@ div {
     border: var(--colourDefault);
     border-color: var(--colourDefault);
     border-style: solid;
-    border-width: 0.5%;
+    border-width: 3px;
     padding: 5px;
     overflow:visible;
     transition: box-shadow 0.2s;
