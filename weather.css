@@ -18,20 +18,20 @@ body {
     backdrop-filter: blur(10px);
     box-shadow:  20px 20px 60px rgba(0, 0, 0, 0.5), -20px -20px 60px rgba(255, 255, 255, 0.3);
     border-radius: 20px;
+    border: 0px solid black;
     margin-bottom: 15px;
 }
 
 /* Search Bar */
-#search {padding: 5vh;}
+#search {padding: 10px;}
 .search {
     margin-inline: auto;
     display: flex;
     border: 0px solid black;
     border-radius: 100vh;
     width: min(800px, 90%);
-    box-shadow:  20px 20px 60px rgba(0, 0, 0, 0.7), -20px -20px 60px rgba(255, 255, 255, 0.3);
 
-    & .input {
+    & :is(.input, .distance) {
         flex-grow: 1;
         font-size: 1.5rem;
         padding: 0.3rem 1.2rem;
@@ -47,6 +47,10 @@ body {
             background: transparent;
             background-color: transparent;
         }
+    }
+    & .distance {
+        flex-grow: 0;
+        width: min(160px, 20%);
     }
     & .submits {
         font-size: 2rem;
@@ -67,8 +71,6 @@ body {
     text-align: center;
     width: min(600px, 90%);
     margin-inline: auto;
-    border-radius: 20px;
-    border: 0px solid black;
 
     font-size: 1.2rem;
     max-height: 250px;
