@@ -12,7 +12,7 @@ const weatherImg = {0:'https://cdn-icons-png.flaticon.com/512/1163/1163764.png',
                     81:'https://cdn-icons-png.flaticon.com/512/1163/1163728.png', 82:'https://cdn-icons-png.flaticon.com/512/1163/1163728.png', 85:'https://cdn-icons-png.flaticon.com/512/1163/1163731.png',
                     86:'https://cdn-icons-png.flaticon.com/512/1163/1163731.png', 95:'https://cdn-icons-png.flaticon.com/512/1163/1163738.png', 96:'https://cdn-icons-png.flaticon.com/512/1163/1163733.png',
                     99:'https://cdn-icons-png.flaticon.com/512/1163/1163733.png'};
-const weatherSection =`<h3 class="addressField">Address</h3>
+const weatherSection = `<h3 class="addressField">Address</h3>
                         <div>
                             <img class="weatherImgField" src="https://cdn-icons-png.flaticon.com/512/1163/1163739.png" alt="">
                             <p class="weatherField">Unknown</p>
@@ -23,6 +23,7 @@ const weatherSection =`<h3 class="addressField">Address</h3>
 
 
 function displayWeather() {
+    document.getElementById('fillerMessage').innerText = 'Fetching Weather'
     const weather = fetchWeather().then(setWeather);
 };
 
@@ -32,12 +33,21 @@ async function fetchWeather() {
     const url = `http://192.168.1.165:5000/${location}/${distance}`;
     // const url = `http://172.17.123.169:5000/${location}/${distance}`;
 
-    response = await fetch(url);
+    try {
+        response = await fetch(url);
+    } catch (error) {
+        return false;
+    }
 
     return await response.json();
 };
 
 function setWeather(weather) {
+    if (weather === false) {
+        document.getElementById('fillerMessage').innerText = 'Server Offline';
+        return;
+    };
+
     const addressList = document.getElementsByClassName('addressField');
     const weatherList = document.getElementsByClassName('weatherField');
     const weatherImgList = document.getElementsByClassName('weatherImgField');
@@ -62,4 +72,7 @@ function setWeather(weather) {
         windList[i].innerText = weather[1][2][i];
         humidityList[i].innerText = weather[1][3][i];
     };
+
+    document.getElementById('filler').style.display = 'none';
+    document.getElementById('report').style.display = 'inline';
 };
