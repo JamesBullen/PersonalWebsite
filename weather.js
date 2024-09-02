@@ -30,6 +30,11 @@ function displayWeather() {
 async function fetchWeather() {
     const location = document.getElementById('input').value;
     const distance = document.getElementById('distance').value;
+
+    if (distance == '') {
+        distance = 10;
+    };
+
     const url = `http://192.168.1.165:5000/${location}/${distance}`;
     // const url = `http://172.17.123.169:5000/${location}/${distance}`;
 
