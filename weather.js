@@ -35,7 +35,7 @@ async function fetchWeather() {
         distance = 10;
     };
 
-    const url = `http://192.168.1.165:5000/${location}/${distance}`;
+    const url = `https://192.168.1.165:5000/${location}/${distance}`;
     // const url = `http://172.17.123.169:5000/${location}/${distance}`;
 
     try {
