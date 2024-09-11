@@ -31,7 +31,7 @@ async function fetchWeather() {
     const location = document.getElementById('input').value;
     let distance = document.getElementById('distance').value;
 
-    if (typeof distance != 'number') {
+    if (isNaN(distance) || distance == '') {
         distance = 10;
     };
 
