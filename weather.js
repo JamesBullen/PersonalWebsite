@@ -31,7 +31,7 @@ async function fetchWeather() {
     const location = document.getElementById('input').value;
     let distance = document.getElementById('distance').value;
 
-    if (distance == '') {
+    if (typeof distance != 'number') {
         distance = 10;
     };
 
