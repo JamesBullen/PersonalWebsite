@@ -214,10 +214,10 @@ li:not(.active) .header-last {
         }
     }
 }
-li:is(.active) .closed {
+li:is(.active) .open {
     display: none;
 }
-li:not(.active) .open {
+li:not(.active) .closed {
     display: none;
 }
 
