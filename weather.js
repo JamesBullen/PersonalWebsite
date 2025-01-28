@@ -48,11 +48,12 @@ async function fetchWeather() {
 };
 
 function setWeather(weather) {
+    console.log(weather[0][0])
     if (weather === false) {
         document.getElementById('fillerMessage').innerText = 'Server Offline';
         return;
     };
-    if (weather[0][0] == 'BAD_ADDRESS') {
+    if (weather[0] == 'BAD_ADDRESS') {
         document.getElementById('fillerMessage').innerText = 'Address Not Found';
         return;
     };
