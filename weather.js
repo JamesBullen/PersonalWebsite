@@ -52,6 +52,10 @@ function setWeather(weather) {
         document.getElementById('fillerMessage').innerText = 'Server Offline';
         return;
     };
+    if (weather[0][0] == 'BAD_ADDRESS') {
+        document.getElementById('fillerMessage').innerText = 'Address Not Found';
+        return;
+    };
 
     const addressList = document.getElementsByClassName('addressField');
     const weatherList = document.getElementsByClassName('weatherField');
