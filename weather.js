@@ -48,7 +48,7 @@ async function fetchWeather() {
 };
 
 function setWeather(weather) {
-    console.log(weather[0][0])
+    console.log(weather[0])
     if (weather === false) {
         document.getElementById('fillerMessage').innerText = 'Server Offline';
         return;
