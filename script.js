@@ -11,7 +11,7 @@ function sendEmail() {
     email: document.getElementById('email').value,
     message: document.getElementById('message').value
   }
-  emailjs.send('service_fil2m7h', 'template_w5e22hn', params).then((response) => {
+  emailjs.send('service_fil2m7h', 'template_w5e22hn', params, {publicKey: 'xK7LzzgHH50GpxlVv'}).then((response) => {
     console.log('SUCCESS', response.status, response.text);
   },
   (error) => {
