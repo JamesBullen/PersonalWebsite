@@ -1,0 +1,278 @@
+/* Global variables */
+:root {
+    --card: #90d8b2;
+    --cardGrad: #8dd2dd;
+
+    --background: #b3c7f7;
+    --backgroundGrad: #d9e4ff;
+    --backgroundText: #eff6ff;
+
+    --shadow: rgba(0, 0, 0, 0.5);
+    --highlight: rgba(255, 255, 255, 0.3);
+
+    --rounding: 10px;
+}
+
+/* Tags */
+* {
+    margin: 0;
+
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(var(--background), var(--backgroundGrad));
+
+    margin-inline: auto;
+    width: 50%;
+}
+
+nav, footer {
+    position: sticky;
+    top: 0;
+
+    padding-block: 5px;
+    border-radius: var(--rounding);
+    background-image: linear-gradient(var(--card), var(--cardGrad));
+    box-shadow:  0px 10px 20px -5px var(--shadow);
+    text-align: center;
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    li {
+        display: inline;
+        :hover {
+            font-weight: bold;
+        }
+    }
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    label, input {
+        display: none;
+    }
+}
+
+:is(h1, h2, h3) {
+    font-family: "Playfair", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: italic;
+    font-variation-settings: "wdth" 100;
+    font-size: 3em;
+}
+
+h2 {
+    text-align: center;
+}
+
+section, nav {
+    margin-bottom: 5em;
+}
+
+/* Classes */
+.card {
+    margin-inline: auto;
+
+    padding-block: 10px 20px;
+    display: flexbox;
+    justify-content: center;
+    text-align: center;
+
+    background-image: linear-gradient(var(--card), var(--cardGrad));
+    border-radius: var(--rounding);
+    box-shadow:  5px 10px 30px var(--shadow), -5px -10px 30px var(--highlight);
+}
+
+/* IDs */
+#title {
+    margin-block: 10px;
+    font-size: 5em;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 5px 10px 10px var(--shadow);
+}
+
+#location {
+    display: flex;
+
+    iframe {
+        border-radius: var(--rounding);
+        box-shadow:  5px 10px 30px var(--shadow), -5px -10px 30px var(--highlight);
+        margin-right: 10px;
+
+        width: 400px;
+        height: 300px;
+    }
+}
+
+#rental {
+    table {
+        table-layout: auto;
+        border-collapse: collapse;
+        
+        thead {
+            th {
+                padding: 10px;
+                font-weight: bold;
+            }
+            
+            :not(:first-child) {
+                border-left: 1px solid;
+            }
+        }
+        tbody tr {
+            border-top: 1px solid;
+
+            :not(:first-child) {
+                border-left: 1px solid;
+            }
+        }
+        td {
+            padding: 10px;
+        }
+    }
+}
+
+#signup {
+    form {
+        width: fit-content;
+        max-width: 100%;
+
+        div {
+            display: grid;
+            padding: 5px;
+            padding-inline: 10px;
+            padding-bottom: 0px;
+            
+            column-gap: 5px;
+            row-gap: 5px;
+            grid-template-areas: 
+            '. name . email'
+            'message message message message';
+        }
+    }
+    :is(input, textarea, button) {
+        background-image: linear-gradient(var(--backgroundText), var(--backgroundGrad));
+        border-radius: 5px;
+        resize: none;
+        border: 1px;
+        overflow: hidden;
+    }
+    #fName {grid-area: name;}
+    #fEmail {grid-area: email;}
+    #fMessage {grid-area: message; min-height: 150px;}
+
+    div {
+        align-self: center;
+        padding-inline: 10px;
+        border: 0px;
+    }
+}
+
+/* Reactive media */
+@media screen and (max-width: 1708px) {
+    body {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 1426px) {
+    body {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 1280px) {
+    body {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 1073px) {
+    body {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        width: 100%;
+    }
+    nav, footer {
+        border-radius: 0px;
+    }
+    #title {
+        font-size: 4em;
+    }
+    #location {
+        display: flex;
+        flex-direction: column-reverse;
+
+        div {
+            text-align: center;
+
+            iframe {
+                margin: 0;
+                margin-top: 2em;
+
+                width: 350px;
+                height: 275px;
+            }
+        }
+    }
+    #signup form div {
+        grid-template-areas:
+        '. name'
+        '. email'
+        'message message';
+    }
+}
+@media screen and (max-width: 480px) {
+    body {
+        width: 100%;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            display:inline;
+            padding-right: 5px;
+            align-self: flex-end;
+
+            font-size: larger;
+            font-weight: bold;
+        }
+        ul, li {
+            display: block;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+            padding-block: 5px;
+        }
+        input:not(:checked)+ul {
+            display: none;
+        }
+    }
+    #title {
+        font-size: 3em;
+    }
+    #location {
+        iframe {
+            width: 20;
+            height: 10;
+        }
+    }
+    #rental {
+        thead tr th {
+            padding: 0px;
+        }
+        tbody tr td {
+            padding: 0px;
+        }
+    }
+}

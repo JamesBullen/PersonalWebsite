@@ -3,9 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Allotments</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script defer src="allotment.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="allotment.css">
 </head>
 <body>
-    <h1>Blank</h1>
+    <header>
+        <!-- Title -->
+        <h1 id="title">Senior Citizen Allotments</h1>        
+    </header>
+    <!-- Navigation bar -->
+    <nav>
+        <label for="burger">&#9776</label>
+        <input id="burger" type="checkbox">
+        <ul>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#rental">Information</a></li>
+            <li><a href="#signup">Sign Up</a></li>
+        </ul>
+        
+    </nav>
+    <main>
+        <!-- Allotment location -->
+        <section id="location">
+            <div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d19804.159569897813!2d-0.39419731460230834!3d51.65031607146622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1swatford%20allotments!5e0!3m2!1sen!2suk!4v1750239066382!5m2!1sen!2suk" style="border:0; " allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div>
+                <h3>Where We Are</h3>
+                <p>We have many allotments across the Watford area, consisteing of both council and garden societies.</p><br>
+                <p>For council allotments, you must live within 2 miles and pay council tax to qualify.</p>
+            </div>
+        </section>
+
+        <!-- Rental information -->
+        <section id="rental">
+                <h2>Rentals</h2>
+                <table class="card">
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>75ft² Annually</th>
+                            <th>125ft² Annually</th>
+                            <th>250ft² Annually</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Briar Road</td>
+                            <td>£30</td>
+                            <td>£50</td>
+                            <td>£100</td>
+                        </tr>
+                        <tr>
+                            <td>Brightwell</td>
+                            <td>£27</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Callowland</td>
+                            <td>£25</td>
+                            <td>£40</td>
+                            <td>£80</td>
+                        </tr>
+                        <tr>
+                            <td>Cherry Tree</td>
+                            <td>-</td>
+                            <td>£45</td>
+                            <td>£90</td>
+                        </tr>
+                        <tr>
+                            <td>Finch Lane</td>
+                            <td>£27</td>
+                            <td>£45</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Garston Manor</td>
+                            <td>£30</td>
+                            <td>£50</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Holywell</td>
+                            <td>£24</td>
+                            <td>£40</td>
+                            <td>£80</td>
+                        </tr>
+                        <tr>
+                            <td>North Watford</td>
+                            <td>£27</td>
+                            <td>-</td>
+                            <td>£90</td>
+                        </tr>
+                        <tr>
+                            <td>Oxhey Grange</td>
+                            <td>-</td>
+                            <td>£45</td>
+                            <td>£90</td>
+                        </tr>
+                        <tr>
+                            <td>Paddock Road</td>
+                            <td>£27</td>
+                            <td>£45</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Prestwick Road</td>
+                            <td>-</td>
+                            <td>£45</td>
+                            <td>£90</td>
+                        </tr>
+                        <tr>
+                            <td>Tavistock Road</td>
+                            <td>-</td>
+                            <td>£45</td>
+                            <td>£90</td>
+                        </tr>
+
+                        <tr>
+                            <td>Timberlake</td>
+                            <td>£27</td>
+                            <td>-</td>
+                            <td>£90</td>
+                        </tr>
+                        <tr>
+                            <td>Watford Road</td>
+                            <td>£27</td>
+                            <td>£45</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>West Watford</td>
+                            <td>£27</td>
+                            <td>£45</td>
+                            <td>£90</td>
+                        </tr>
+                        <tr>
+                            <td>Wiggenhall</td>
+                            <td>-</td>
+                            <td>£40</td>
+                            <td>£80</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+
+        <!-- Sign up -->
+        <section id="signup">
+                <h2>Sign Up</h2>
+                <form class="card" onsubmit="sendEmail(); return false">
+                    <div>
+                        <label for="fName">Name:</label>
+                        <input type="text" id="fName" placeholder="Your name" required>
+                        <label for="fEmail">Email:</label>
+                        <input type="email" id="fEmail" placeholder="Your email" required>
+                        <label for="fMessage"></label>
+                        <textarea id="fMessage" placeholder="Your message" required></textarea>
+                    </div>
+                    <button>Send</button>
+                </form>
+                <!-- Popover -->
+                <div id="popover" class="card" popover>
+                    <h2>Message sent</h2>
+                </div>
+        </section>
+    </main>
+    <footer>Unit 17 example website</footer>
 </body>
 </html>
