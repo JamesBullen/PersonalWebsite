@@ -21,6 +21,10 @@
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
+
+    line-height: 1.5;
+    letter-spacing: 0.15;
+    word-spacing: 0.2;
 }
 
 body {
