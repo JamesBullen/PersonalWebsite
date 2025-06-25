@@ -232,9 +232,6 @@ section, nav {
     }
 }
 @media screen and (max-width: 480px) {
-    body {
-        width: 100%;
-    }
     nav {
         display: flex;
         flex-direction: column;
@@ -253,6 +250,9 @@ section, nav {
             text-align: center;
             padding: 0;
             padding-block: 5px;
+        }
+        li:hover {
+            background-color: var(--background);
         }
         input:not(:checked)+ul {
             display: none;
